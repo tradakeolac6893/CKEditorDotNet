@@ -1,0 +1,15 @@
+﻿B1 add 2 dll là CKFinder và CKEditor.NET
+B2 add 2 file ckeditor và CKFinder vào thư mục gốc
+B3 thêm đoạn code này vào hàm 
+ protected void Page_Load(object sender, EventArgs e)
+        {
+            CKEditorControl1.Language = "vi";
+            CKFinder.FileBrowser _FileBrowser = new CKFinder.FileBrowser();
+            _FileBrowser.BasePath = "/ckfinder/";
+            _FileBrowser.SetupCKEditor(CKEditorControl1);
+        }
+
+B4 thêm đoạn code này vào trang giao diện:
+<%@ Register assembly="CKEditor.NET" namespace="CKEditor.NET" tagprefix="CKEditor" %>
+
+<CKEditor:CKEditorControl ID="CKEditorControl1" runat="server"></CKEditor:CKEditorControl>
